@@ -41,7 +41,7 @@ class AuthController extends Controller
             ?? $keycloakUser->getNickname()
             ?? $keycloakUser->getId();
 
-        if ($email = $keycloakUser->getEmail()) {
+         if (! $localUser->exists && blank($localUser->email) && $keycloakUser->getEmail()) {
             $localUser->email = $email;
             $localUser->email_verified_at = now();
         } elseif (! $localUser->exists) {
