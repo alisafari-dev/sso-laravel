@@ -1,5 +1,5 @@
 {
-    "name": "asafari/laravel-keycloak-sso",
+    "name": "alisafari-dev/laravel-keycloak-sso",
     "description": "Keycloak SSO integration for Laravel with prefixed routes and Socialite.",
     "version": "1.0.0",
     "type": "library",
