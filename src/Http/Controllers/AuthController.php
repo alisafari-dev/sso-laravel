@@ -48,6 +48,9 @@ class AuthController extends Controller
             $domain = config('keycloak-sso.user.placeholder_email_domain', 'sso.local');
             $localUser->email = $localPart.'@'.$domain;
         }
+        if (! $localUser->exists && blank($localUser->password)) {
+            $localUser->password = Str::password(64);
+        }
 
         $localUser->save();
 
